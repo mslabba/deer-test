@@ -19,14 +19,6 @@ class ProductController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(Product $product)
@@ -45,9 +37,8 @@ class ProductController extends Controller
             $stripeCharge = (new User)->charge($amount * 100, $request->input('payment_method'));
 
             return to_route('products.show', $product_id)->with('success', 'Payment processed successfully! Thanks for shoping.');
-            //return redirect()->route('products.show', $request->product_id);
         } catch (\Exception $e) {
-            return redirect()->route('products.show', $product_id)->with('error', 'There is an error while processing the payment!');
+            return to_route('products.show', $product_id)->with('error', 'There is an error while processing the payment!');
         }
     }
 

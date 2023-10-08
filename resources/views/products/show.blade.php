@@ -95,23 +95,6 @@
     let card = elements.create('card', {hidePostalCode: true, style: style})
     card.mount('#card-element')
     let paymentMethod = null
-    
-    // const cardHolderName = document.getElementById('card-holder-name');
-    // const cardButton = document.getElementById('card-button');
-    // cardButton.addEventListener('click', async (e) => {
-    //     console.log('inside button click');
-    // const { paymentMethod, error } = await stripe.createPaymentMethod(
-    //     'card', cardElement, {
-    //         billing_details: { name: cardHolderName.value }
-    //     }
-    // );
- 
-    // if (error) {
-    //     // Display "error.message" to the user...
-    // } else {
-    //     document.getElementById('payment-method') = paymentMethod.id;
-    // }
-
     let cardHolderName = $('#card-holder-name').val();
     $('button#card-button').on('click', function(e) {
         e.preventDefault();
