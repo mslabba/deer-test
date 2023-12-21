@@ -1,19 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.w-100{width: 300px;}
-.rounded-md {
-    border-radius: 0.375rem;
+
+[x-cloak] {
+    display: none;
 }
 
-.bg-clr {
-    background-color: #b53d3d;
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
-.font-clr {
-    color: white;
-}
-
-#card-errors {
-    color: red;
+.table {
+    width: 100%;
 }
